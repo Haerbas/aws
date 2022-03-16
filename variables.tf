@@ -236,7 +236,7 @@ variable "rt_cidr_block" {
 variable "instance_ami" {
   description = "ID of the AMI used"
   type        = string
-  default = "ami-0855c56d5a1df2ef1" #viz-ndibridge
+  default     = "ami-0855c56d5a1df2ef1" #viz-ndibridge
 }
 
 variable "instance_ami_host" {

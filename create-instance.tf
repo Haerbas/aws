@@ -31,6 +31,7 @@ resource "aws_instance" "instance_1" {
     "Owner"               = var.owner
     "Name"                = "Bridge-Host-${var.owner}" #${count.index}"
     "KeepInstanceRunning" = "false"
+    "Monitoring"          = "true"
   }
 }
 
@@ -58,6 +59,7 @@ resource "aws_instance" "instance_2" {
     "Owner"               = var.owner
     "Name"                = "Bridge-Join-${var.owner}" #${count.index}"
     "KeepInstanceRunning" = "false"
+    "Monitoring"          = "true"
   }
 }
 

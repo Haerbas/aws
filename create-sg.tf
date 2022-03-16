@@ -21,15 +21,15 @@ resource "aws_security_group" "sg" {
     self             = false
     },
     {
-    description      = "SSH-Income"
-    protocol         = var.sg_ingress_proto
-    from_port        = var.sg_ingress_ssh
-    to_port          = var.sg_ingress_ssh
-    cidr_blocks      = ["0.0.0.0/0"] #["${chomp(data.http.myip.body)}/32"]
-    ipv6_cidr_blocks = []
-    prefix_list_ids  = []
-    security_groups  = []
-    self             = false
+      description      = "SSH-Income"
+      protocol         = var.sg_ingress_proto
+      from_port        = var.sg_ingress_ssh
+      to_port          = var.sg_ingress_ssh
+      cidr_blocks      = ["0.0.0.0/0"] #["${chomp(data.http.myip.body)}/32"]
+      ipv6_cidr_blocks = []
+      prefix_list_ids  = []
+      security_groups  = []
+      self             = false
     },
     {
       description      = "Win-RDP"
