@@ -1,32 +1,5 @@
 #create new eip's
 
-/*resource "aws_eip" "ip_1" {
-  vpc = true
-  tags = {
-    "Purpose"             = "Bridge-Host"
-   }
-}
-
-resource "aws_eip" "ip_2" {
-  vpc = true
-  tags = {
-    "Purpose"             = "Bridge-Join"
-   }
-}
-
-resource "aws_eip" "ip_3" {
-  vpc = true
-   tags = {
-    "Purpose"             = "Input-Source"
-   }
-}
-
-resource "aws_eip" "ip_4" {
-  vpc = true
-  tags = {
-    "Purpose"             = "Analyze"
-   }
-}*/
 
 #query for eip's
 data "aws_eip" "host" {

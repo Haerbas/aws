@@ -9,41 +9,17 @@ variable "aws_region" {
   default     = "eu-central-1"
 }
 
-/*data "aws_availability_zones" "all" {}
-
-data "aws_ec2_instance_type_offerings" "offer" {
-  for_each = toset(data.aws_availability_zones.all.names)
-
-  filter {
-    name   = "instance-type"
-    values = ["g4dn.xlarge", "g4dn.2xlarge"]
-  }
-
-  filter {
-    name   = "location"
-    values = [each.value]
-  }
-
-  location_type = "availability-zone"
-
-  #preferred_instance_types = ["g4dn.xlarge","g4dn.2xlarge"]
-}*/
-
 variable "owner" {
   description = "Configuration owner"
   type        = string
   default     = "her"
 }
 
+# Query for the available Zones
+######################################
 data "aws_availability_zones" "available" {
   state = "available"
 }
-
-/*variable "aws_region_az" {
-  description = "AWS region availability zone"
-  type        = string
-  default     = "a"
-}*/
 
 
 # Variables for VPC
@@ -290,12 +266,6 @@ variable "instance_type_analyze" {
   #default     = "t2.micro"
   default = "m4.large"
 }
-
-/*variable "instance_count" {
-  description = "How many instances should be deployed"
-  type        = number
-  default     = 1
-}*/
 
 variable "key_pair" {
   description = "SSH Key pair used to connect"
